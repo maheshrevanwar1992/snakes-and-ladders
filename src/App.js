@@ -3,6 +3,8 @@ import Board from './Board/Board.jsx';
 import Hurdles from './Hurdles/Hurdles.jsx';
 import { HURDLES, PLAYER_COLORS, PLAYER_COUNT } from './App.Constants';
 import Player from './Player/Player';
+import GameStats from './GameStats/GameStats';
+import Dice from './Dice/Dice';
 
 import './App.scss';
 
@@ -83,27 +85,10 @@ const App = () => {
           }
         </div>
         <div className='game-stats-dice-container'>
-          <div className='game-stats'>
-            <div>Player Details</div>
-            <div className='player-list'>
-              <div className='player-name'>Name</div>
-              <div className='player-position'>Current Position</div>
-              {
-                players.map(p => {
-                  return (<>
-                    <div className='player-name'>{ p.name }</div>
-                    <div className='player-position'>{ p.position }</div>
-                  </>)
-                })
-              }
-            </div>
-          </div>
-          <div className='dice-container'>
-            <div className='last-value'>{ diceLastValue }</div>
-            <button className='play-button' onClick={ handleOnDiceClick }>
-              Play { players[currentPlayer].name }
-            </button>
-          </div>
+          <GameStats players={ players } />
+          <Dice currentPlayerName={ players[currentPlayer].name }
+            diceLastValue={ diceLastValue }
+            handleOnDiceClick={ handleOnDiceClick } />
         </div>
       </div>
       {
