@@ -1,38 +1,171 @@
+div {
+    box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+    position: relative;
+    font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.game-container {
+    display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.board-container {
+    position: relative;
+    width: 800px;
+    height: 800px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.hurdles-players {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.board {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #b0b2ea;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row {
+    display: flex;
+}
+
+.row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.cell {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.cell:nth-child(even) {
+    background-color: #c5eae6;
+}
+
+.line {
+    stroke-width: 2px;
+}
+
+.line.snake {
+    stroke: red;
+}
+
+.line.ladder {
+    stroke: green;
+}
+
+.circle.snake {
+    fill: red;
+}
+
+.circle.ladder {
+    fill: green;
+}
+
+.player-transition {
+    transition: all 2s;
+}
+
+.game-stats-dice-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.game-stats {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.player-list {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    border: 1px solid;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.player-name, .player-position {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 1px solid;
+}
+
+.dice-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.last-value {
+    font-size: 40px;
+    margin-bottom: 10px;
+    height: 50px;
+}
+
+.play-button {
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 15px;
+    background: skyblue;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+.winner-banner {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.congrats-text {
+    font-size: 100px;
+    animation-duration: 5s;
+    animation-name: minMax;
+    animation-iteration-count: infinite;
+    transition: all 1s;
+    color: green;
+}
+
+@keyframes minMax {
+    0% {
+        transform: scale(0.5);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.5);
+    }
 }
