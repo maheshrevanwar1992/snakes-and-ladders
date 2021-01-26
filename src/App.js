@@ -1,9 +1,10 @@
 import { useState, useEffect, useReducer } from 'react';
 import Board from './Board/Board.jsx';
 import Hurdles from './Hurdles/Hurdles.jsx';
-import './App.css';
 import { HURDLES, PLAYER_COLORS, PLAYER_COUNT } from './App.Constants';
 import Player from './Player/Player';
+
+import './App.scss';
 
 const playerReducer = (state, action) => {
   switch (action.type) {
