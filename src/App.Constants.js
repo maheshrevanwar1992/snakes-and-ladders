@@ -5,7 +5,8 @@ export const HURDLES = {
   12: 54,
   7: 69,
   98: 34,
-  78: 5
+  78: 5,
+  20: 65
 };
 
 export const PLAYER_COLORS = [
