@@ -17,7 +17,7 @@ const Hurdles = ({ refsArray }) => {
               </>)
             } else {
 
-              const slope = (y2 - y1) / (x2 - x1);
+              const slope = (y2 - y1) / (x2 - x1); // y = mx + c
               const constant = y1 - (slope * x1);
               const allStrikes = [];
 

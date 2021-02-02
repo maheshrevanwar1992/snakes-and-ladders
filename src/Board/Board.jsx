@@ -1,6 +1,6 @@
 import { COLUMNS, ROWS } from '../App.Constants';
 
-const Board = ({refsArray}) => {
+const Board = ({ refsArray }) => {
   return (<div className="board">
     {
       [ ...Array(ROWS) ].map((_, i) => {
