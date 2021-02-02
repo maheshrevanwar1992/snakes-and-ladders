@@ -3,6 +3,9 @@ it is a simple prototype of Sankes and Ladders game using React
 
 you can configure player count, snakes and ladders state from App.constants.js file
 
+
+![Game board snap](https://raw.githubusercontent.com/maheshrevanwar1992/snakes-and-ladders/master/screenshots/snap1.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
